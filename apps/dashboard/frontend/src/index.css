@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+/*
+ * A clean, dark-oriented engineering/research visual language —
+ * deliberately restrained: no gradients, no decorative illustrations,
+ * no "AI" shimmer effects. See docs/PHASE_DASHBOARD_V1.md's Frontend
+ * section for the design rationale.
+ */
+@theme {
+  --color-surface-0: #0b0f14;
+  --color-surface-1: #10161d;
+  --color-surface-2: #161d26;
+  --color-surface-3: #1e2733;
+  --color-border: #2a3542;
+  --color-border-subtle: #202a35;
+
+  --color-text-primary: #e6edf3;
+  --color-text-secondary: #9aa8b4;
+  --color-text-muted: #647383;
+
+  --color-accent: #4f8ff0;
+  --color-accent-hover: #6ba0f2;
+
+  --color-status-success: #3fb27f;
+  --color-status-warning: #d6a24e;
+  --color-status-danger: #e0605a;
+  --color-status-neutral: #647383;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-surface-0);
+  color: var(--color-text-primary);
+  font-family:
+    ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Visible focus states everywhere — never rely on the browser default
+   alone being sufficient, and never remove it for aesthetics. */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--color-accent) 35%, transparent);
+}

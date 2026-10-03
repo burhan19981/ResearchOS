@@ -1,0 +1,11 @@
+# Development and validation
+
+Start with the root README's virtual environment and editable install. Include both `dev` and `dashboard` extras to run the full Python suite. Tests cover domain services, temporary SQLite migrations, mock LLM/source adapters, security boundaries, subprocess execution, and the dashboard API.
+
+Run `python -m pytest tests -q` from the repository root. Some platform-dependent tests may skip; report skipped cases rather than claiming they passed. Python linting, formatting, and static type checking are not currently configured. Do not describe import checks or pytest as substitutes for them.
+
+In `apps/dashboard/frontend`, run `npm ci`, `npm run lint`, `npm run typecheck`, `npm test`, and `npm run build`. The lockfile controls the npm dependency graph. Install Chromium using `npx playwright install chromium`, then run `npm run test:e2e`. The launcher expects `.venv` at the repository root. It uses explicitly synthetic seed records and ports 8000/4300. Never point tests at a private research database.
+
+No formatter is configured. Avoid repository-wide reformatting unrelated to a change. Python requirements are ranges; record installed versions when reporting reproducibility and test results. Live API compatibility, current provider model availability, scientific validity, and production deployment are outside the automated suite's guarantees.
+
+For schema changes, add an Alembic migration and migration regression coverage. Back up local data before running migrations. Do not edit applied historical migrations to hide schema changes.

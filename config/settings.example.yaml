@@ -1,0 +1,20 @@
+# ResearchOS configuration template (Phase 1 placeholder).
+#
+# This file documents the SHAPE of future configuration only.
+# No code currently reads this file — config loading logic is not
+# implemented yet and will be added in a later phase.
+
+app:
+  name: ResearchOS
+  environment: development # development | staging | production
+  log_level: INFO
+
+paths:
+  data_dir: ./data
+  logs_dir: ./logs
+
+# Placeholders for future sections — left empty intentionally.
+# llm: {}
+# database: {}
+# agents: {}
+# workflows: {}
