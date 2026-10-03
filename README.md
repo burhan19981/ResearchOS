@@ -69,6 +69,8 @@ python -m pytest tests -q
 
 The example creates a synthetic project in a temporary SQLite database and removes it on exit. It needs no provider credentials. Tests use mock providers and temporary databases; they do not establish live provider compatibility or research quality.
 
+For a complete local execution tutorial, run `python -m examples.reproducible_experiment`, then `python -m examples.reproducible_experiment --approve-execution`. It demonstrates the approval gate, computes a synthetic regression baseline and fitted-model error, and stores metrics and artifact hashes. See [examples](examples/README.md) and the [first-use guide](docs/TRY_RESEARCHOS.md).
+
 For a persistent local database:
 
 ```sh
