@@ -152,3 +152,5 @@ datasets/
 .coverage.*
 coverage/
 *.sublime-workspace
+# Retained local example runs include machine-specific provenance.
+demo-results/
